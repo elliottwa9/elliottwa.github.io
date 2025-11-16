@@ -40,10 +40,3 @@ Skills
   * Sub-skill 2.2
   * Sub-skill 2.3
 * Skill 3
-
-# How to make url and header stuff
-# Title
-# ======
-  # <ul>{% for post in site.publications reversed %}
-   # {% include archive-single-cv.html %}
-  # {% endfor %}</ul>

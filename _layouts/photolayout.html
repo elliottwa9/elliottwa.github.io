@@ -25,7 +25,7 @@ layout: compress
     }
 
     .wrapper {
-      width: min(1400px, 100%);
+      width: min(3000px, 100%);
       padding: 3rem 1rem 5rem;
     }
 
@@ -49,24 +49,24 @@ layout: compress
     }
 
     .work-item img {
-      width: 100%;
+      width: 120%;
       height: auto;
       display: block;
+      cursor: zoom-in;
     }
 
-    /* small responsiveness */
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
       .work-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 1000px) {
       .work-grid {
         grid-template-columns: 1fr;
       }
     }
-    /* Lightbox styles */
+
     .lightbox {
       position: fixed;
       inset: 0;
@@ -83,9 +83,8 @@ layout: compress
 
     .lightbox__inner {
       position: relative;
-      /* fixed display area to avoid layout jumps when switching aspect ratios */
-      width: 65vw;
-      height: 65vh;
+      width: 70vw;
+      height: 70vh;
       max-width: 94vw;
       max-height: 86vh;
       display: flex;
@@ -96,7 +95,6 @@ layout: compress
     }
 
     .lightbox__img {
-      /* contained inside the fixed display area */
       max-width: 100%;
       max-height: 100%;
       width: auto;
@@ -104,9 +102,6 @@ layout: compress
       object-fit: contain;
       box-shadow: 0 20px 60px rgba(0,0,0,0.6);
       transition: opacity 220ms ease, transform 220ms ease;
-      opacity: 1;
-      will-change: opacity, transform;
-      display: block;
     }
 
     .lightbox__frame {
@@ -115,13 +110,6 @@ layout: compress
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: visible;
-    }
-
-    /* Mobile override: allow a bit more room on narrow screens */
-    @media (max-width: 700px) {
-      .lightbox__inner { max-width: 94vw; max-height: 86vh; }
-      .lightbox__btn { padding: 10px 12px; font-size: 18px; }
     }
 
     .lightbox__btn {
@@ -136,35 +124,31 @@ layout: compress
       font-size: 20px;
     }
 
-    .lightbox__btn:focus { outline: 2px solid #fff; }
-
     .lightbox__prev { left: -50px; }
     .lightbox__next { right: -50px; }
 
     .lightbox__close {
-      position: absolute;
-      /* position relative to the viewport (lightbox container) */
-      top: 20px;
-      right: 20px;
-      background: transparent;
-      color: #fff;
-      border: none;
-      font-size: 26px;
-      cursor: pointer;
-      z-index: 10010;
+        position: fixed; 
+        top: 13px;
+        right: 20px;
+        background: transparent;
+        color: #fff;
+        font-size: 28px;  
+         cursor: pointer;
+        z-index: 100000;   
+        border: none;
+        padding: 0;
     }
 
     .lightbox__counter {
       position: absolute;
-      top: 20px;
+      top: 16px;
       left: 20px;
-      transform: none;
       color: #ddd;
-      font-size: 13px;
+      font-size: 16px;
       background: rgba(0,0,0,0.35);
       padding: 6px 10px;
       border-radius: 6px;
-      z-index: 10012;
     }
   </style>
 </head>
@@ -174,23 +158,28 @@ layout: compress
   {% include masthead.html %}
 
   <div class="wrapper">
-    <h2>
-      Photos I Took
-    </h2>
+    <h2>Photo Gallery</h2>
 
     <div class="work-grid">
-      {% assign photos = site.static_files | where_exp: "f", "f.path contains '/images/Photography/'" | sort: "name" | reverse %}
-      {% assign seen = "" %}
-      {% for file in photos %}
-        {% assign fname = file.name | downcase | split: "." | first %}
-        {% if seen contains fname %}
-        {% else %}
-          {% assign seen = seen | append: fname | append: "|" %}
-          <figure class="work-item">
-            <img src="{{ base_path }}{{ file.path }}" alt="Photo">
-          </figure>
-        {% endif %}
+
+      {% comment %}
+      Get all static files under /images/Photography/,
+      then group by FULL PATH so each path is only used once.
+      {% endcomment %}
+
+      {% assign photos = site.static_files
+        | where_exp: "f", "f.path contains '/images/Photography/'"
+        | sort: "path" %}
+
+      {% assign grouped_by_path = photos | group_by: "path" %}
+
+      {% for group in grouped_by_path %}
+        {% assign file = group.items[0] %}
+        <figure class="work-item">
+          <img src="{{ base_path }}{{ file.path }}" alt="Photo {{ forloop.index }}">
+        </figure>
       {% endfor %}
+
     </div>
   </div>
 
@@ -201,16 +190,16 @@ layout: compress
     </footer>
   </div>
 
-  <!-- Lightbox modal -->
+  <!-- Lightbox -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <button class="lightbox__close" id="lightboxClose" aria-label="Close">✕</button>
     <div class="lightbox__counter" id="lightboxCounter"></div>
-    <div class="lightbox__inner" role="dialog" aria-modal="true">
-      <button class="lightbox__btn lightbox__prev" id="lightboxPrev" aria-label="Previous">◀</button>
+    <div class="lightbox__inner">
+      <button class="lightbox__btn lightbox__prev" id="lightboxPrev">◀</button>
       <div class="lightbox__frame">
-        <img src="" alt="" class="lightbox__img" id="lightboxImg">
+        <img src="" class="lightbox__img" id="lightboxImg">
       </div>
-      <button class="lightbox__btn lightbox__next" id="lightboxNext" aria-label="Next">▶</button>
+      <button class="lightbox__btn lightbox__next" id="lightboxNext">▶</button>
     </div>
   </div>
 
@@ -229,38 +218,23 @@ layout: compress
       var current = 0;
 
       function gather() {
-        items = Array.prototype.slice.call(document.querySelectorAll('.work-item img'))
+        items = Array.from(document.querySelectorAll('.work-item img'))
           .map(function(i){ return i.getAttribute('src'); });
       }
 
       function openAt(index){
         if(!items.length) gather();
         current = (index + items.length) % items.length;
-        imgEl.src = items[current];
-        imgEl.alt = '';
-        // Fade out current image, change src, then fade in when loaded
-        try { imgEl.style.opacity = 0; } catch(e){}
-        // ensure removing any previous onload
-        imgEl.onload = null;
-        imgEl.src = items[current];
-        imgEl.alt = '';
+        imgEl.style.opacity = 0;
         imgEl.onload = function(){
-          var naturalW = imgEl.naturalWidth || 1;
-        var naturalH = imgEl.naturalHeight || 1;
-        if (naturalH > naturalW) {
-            lightbox.classList.add('is-portrait');
-        } else {
-            lightbox.classList.remove('is-portrait');
-        }
-            // fade in
           imgEl.style.opacity = 1;
         };
+        imgEl.src = items[current];
 
         lightbox.classList.add('open');
         lightbox.setAttribute('aria-hidden','false');
-        updateCounter();
+        counter.textContent = (current + 1) + ' / ' + items.length;
         document.body.style.overflow = 'hidden';
-        setTimeout(function(){ imgEl.focus && imgEl.focus(); }, 50);
       }
 
       function close(){
@@ -272,22 +246,16 @@ layout: compress
       function prev(){ openAt(current - 1); }
       function next(){ openAt(current + 1); }
 
-      function updateCounter(){
-        counter.textContent = (current + 1) + ' / ' + items.length;
-      }
-
       document.addEventListener('DOMContentLoaded', function(){
         gather();
         var thumbs = document.querySelectorAll('.work-item img');
         thumbs.forEach(function(img, idx){
-          img.style.cursor = 'zoom-in';
           img.addEventListener('click', function(e){
             e.preventDefault();
             openAt(idx);
           });
         });
 
-        // close on backdrop click
         lightbox.addEventListener('click', function(e){
           if(e.target === lightbox) close();
         });
