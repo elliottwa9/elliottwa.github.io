@@ -224,7 +224,7 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
-  portfolio:
+  photos:
     output: true
     permalink: /:collection/:path/
   talks:
@@ -270,10 +270,10 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _portfolio
+  # _photos
   - scope:
       path: ""
-      type: portfolio
+      type: photos
     values:
       layout: single
       author_profile: true
