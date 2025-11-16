@@ -8,4 +8,4 @@ redirect_from:
 ---
 
 My name Elliott. 
-I have no idea how to code, so this is a start.
+I have no idea how to code, so this is a start. Everything is under construction.
