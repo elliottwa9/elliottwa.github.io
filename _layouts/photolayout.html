@@ -17,12 +17,12 @@ layout: compress
     }
 
     body {
-      background: var(--body-background-color, #050508);
-      color: var(--text-color, #fff);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-    }
+        background: var(--global-bg-color);
+        color: var(--global-text-color);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        }
 
     .wrapper {
       width: min(3000px, 100%);
@@ -40,16 +40,18 @@ layout: compress
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
+      align-items: start;
     }
 
     .work-item {
+      align-self: start;
       border-radius: 0px;
       overflow: hidden;
       box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
     }
 
     .work-item img {
-      width: 120%;
+      width: 100%;
       height: auto;
       display: block;
       cursor: zoom-in;
