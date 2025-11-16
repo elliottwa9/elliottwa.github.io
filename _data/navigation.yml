@@ -9,10 +9,7 @@
 
 main:
   - title: "Projects"
-    url: /projects/
-
-  - title: "Talks"
-    url: /talks/    
+    url: /projects/  
 
   - title: "Photos"
     url: /photos/    
@@ -25,9 +22,6 @@ main:
     
   - title: "CV"
     url: /cv/
-    
-  # - title: "CV"
-  #   url: /cv-json/
     
   - title: "Guide"
     url: /markdown/
