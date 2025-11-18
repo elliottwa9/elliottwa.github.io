@@ -60,7 +60,6 @@ layout: compress
         display: block;        
         cursor: zoom-in;
         box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
-        transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
     @media (max-width: 1000px) {
@@ -109,22 +108,7 @@ layout: compress
       height: auto;
       object-fit: contain;
       box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-      transition: opacity 300ms ease, transform 300ms ease;
-    }
-
-    .lightbox__loading {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #fff;
-      font-size: 18px;
-      opacity: 0.7;
-      pointer-events: none;
-    }
-
-    .lightbox__loading.hidden {
-      display: none;
+      transition: opacity 220ms ease, transform 220ms ease;
     }
 
     .lightbox__frame {
@@ -199,12 +183,7 @@ layout: compress
       {% for group in grouped_by_path %}
         {% assign file = group.items[0] %}
         <figure class="work-item">
-          <img 
-            src="{{ base_path }}{{ file.path }}" 
-            data-fullsrc="{{ base_path }}{{ file.path }}"
-            alt="Photo {{ forloop.index }}"
-            loading="lazy"
-            decoding="async">
+          <img src="{{ base_path }}{{ file.path }}" alt="Photo {{ forloop.index }}">
         </figure>
       {% endfor %}
 
@@ -225,7 +204,6 @@ layout: compress
     <div class="lightbox__inner">
       <button class="lightbox__btn lightbox__prev" id="lightboxPrev">◀</button>
       <div class="lightbox__frame">
-        <div class="lightbox__loading hidden" id="lightboxLoading">Loading...</div>
         <img src="" class="lightbox__img" id="lightboxImg">
       </div>
       <button class="lightbox__btn lightbox__next" id="lightboxNext">▶</button>
@@ -238,7 +216,6 @@ layout: compress
     (function(){
       var lightbox = document.getElementById('lightbox');
       var imgEl = document.getElementById('lightboxImg');
-      var loadingEl = document.getElementById('lightboxLoading');
       var prevBtn = document.getElementById('lightboxPrev');
       var nextBtn = document.getElementById('lightboxNext');
       var closeBtn = document.getElementById('lightboxClose');
@@ -249,37 +226,17 @@ layout: compress
 
       function gather() {
         items = Array.from(document.querySelectorAll('.work-item img'))
-          .map(function(i){ 
-            // Use full-resolution image from data attribute, fallback to src
-            return i.getAttribute('data-fullsrc') || i.getAttribute('src'); 
-          });
+          .map(function(i){ return i.getAttribute('src'); });
       }
 
       function openAt(index){
         if(!items.length) gather();
         current = (index + items.length) % items.length;
-        
-        // Show loading state
         imgEl.style.opacity = 0;
-        imgEl.style.transform = 'scale(0.95)';
-        if(loadingEl) loadingEl.classList.remove('hidden');
-        
-        // Create new image to preload full resolution
-        var preloadImg = new Image();
-        preloadImg.onload = function(){
-          imgEl.src = items[current];
+        imgEl.onload = function(){
           imgEl.style.opacity = 1;
-          imgEl.style.transform = 'scale(1)';
-          if(loadingEl) loadingEl.classList.add('hidden');
         };
-        preloadImg.onerror = function(){
-          // Fallback if image fails to load
-          imgEl.src = items[current];
-          imgEl.style.opacity = 1;
-          if(loadingEl) loadingEl.classList.add('hidden');
-        };
-        // Start loading the full-resolution image
-        preloadImg.src = items[current];
+        imgEl.src = items[current];
 
         lightbox.classList.add('open');
         lightbox.setAttribute('aria-hidden','false');
