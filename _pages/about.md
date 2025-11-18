@@ -7,5 +7,5 @@ redirect_from:
   - /about.html
 ---
 
-My name Elliott. 
-I have no idea how to code, so this is a start. I'm working on it, the only thing that works is photos. Go there for now.
+My name Elliott. This website is both a personal and professional website, mostly just for fun.
+I'm still working on this website, and the only thing that works is the photo gallery. Go there for now.
