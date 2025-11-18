@@ -9,4 +9,5 @@ redirect_from:
 
 Hello, my name is Elliott. Welcome to the website.
 This website is both a personal and professional website, mostly just for fun.
-I'm still working on this website, and the only thing that works is the photo gallery. Go there for now.
+I'm still working on this website. 
+You can go to the <a href="https://trucklover2015.github.io/elliottwa.github.io/photos/">photos</a> tab for now.
