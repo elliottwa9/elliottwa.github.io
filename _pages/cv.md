@@ -27,4 +27,8 @@ Work experience
   
 Skills
 ======
-* 
+* Excel, PowerPoint, Microsoft Office, Google Workspace, Adobe Creative Suite
+
+Interests
+======
+* Lacrosse, Fantasy Football, Basketball, Movies, B&W Photography, Traveling
