@@ -39,7 +39,7 @@ Extracurriculars
 
 * Video Games and Stuff
   * Hit Celestial in Marvel Rivals (top 1.5%) 3 seasons in a row 
-  * 10,000 trophies in Clash Royale
+  * 10,000 trophies in Clash Royale (top 6%)
 
 Skills
 ======
