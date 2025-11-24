@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Hello, I'm Elliott Wang, a Business Economics major at UC Irvine. <br>
+Hello, I'm Elliott Wang, a Business Economics student at UC Irvine. <br>
 <br>
 Please excuse the lack of anything on here. I still have very limited coding experience, and am using this to tinker and display some of my work. <br>
 <br>
