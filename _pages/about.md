@@ -7,4 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Hello, I'm Elliott Wang, and I'm working on it as I go. 
+Hello, I'm Elliott Wang, a Business Economics major at UC Irvine.
+
+
+Please excuse the lack of anything on here. I'm currently still working on this website with little coding experience. Hopefully it will be significantly better in the future with more substance as I get better. In the meantime, there are 3 other tabs that (kinda) work, so please feel free to visit those while you're here.    
