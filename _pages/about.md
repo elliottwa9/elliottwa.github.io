@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Welcome to my website!"
+title: "Welcome"
 author_profile: true
 redirect_from: 
   - /about/
@@ -8,7 +8,6 @@ redirect_from:
 ---
 
 Hello, I'm Elliott Wang, a Business Economics major at UC Irvine.
-
 
 Please excuse the lack of anything on here. I'm currently still working on this website with little coding experience. 
 Hopefully in the future there will be more substance as I get better. 
