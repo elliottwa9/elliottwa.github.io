@@ -16,7 +16,7 @@ author:
   # Biographic information
   avatar           : "profile.png"
   show_avatar      : false
-  name             : "Elliott Wang"
+  name             : #"Elliott Wang"
   bio              : "Business Economics Student at UC Irvine"
   location         : "Seattle, WA" 
   employer         : "University of California, Irvine"
