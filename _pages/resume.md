@@ -34,7 +34,7 @@ Extracurriculars
   * Currently participating in the Development Program, acquiring fundamental skills in financial statement analysis, corporate valuation, equity research, and financial modeling in interactive workshops. 
 
 * UC Irvine Lacrosse Club 
-  * 2024-25 First Team All-Conference (SLC) honors as a Long-Stick Midfielder for U.C. Irvine
+  * 2024-25 _First Team All-Conference_ (SLC) honors as a Long-Stick Midfielder for U.C. Irvine
   * Competing in the Men’s Collegiate Lacrosse Association’s Southwestern Lacrosse Conference (SLC)
 
 * Video Games and Stuff
