@@ -7,5 +7,4 @@ redirect_from:
   - /about.html
 ---
 
-Hello, welcome to the website.
-This website is both a personal and professional website, and I'm working on it as I go.
+Hello, I'm Elliott Wang, and I'm working on it as I go. 
