@@ -5,21 +5,9 @@ permalink: /photos/
 folder: /images/Photography
 ---
 
-<main class="gallery-page">
-  <div class="gallery-grid">
-    {%- assign folder = page.folder | default: "/images/Photography" -%}
-    {%- assign images = site.static_files | where_exp: "file", "file.path contains folder" -%}
-
-    {%- for image in images -%}
-      {%- assign ext = image.extname | downcase -%}
-      {%- if ext == ".jpg" or ext == ".jpeg" or ext == ".png" or ext == ".webp" -%}
-        <figure class="gallery-card">
-          <img src="{{ image.path | relative_url }}" alt="">
-        </figure>
-      {%- endif -%}
-    {%- endfor -%}
-  </div>
-</main>
+Welcome to the photo gallery. <br>
+Here are some my photos that I like and am confident enough to display. <br>
+Shot with a Fujifilm X100V
 
 
 

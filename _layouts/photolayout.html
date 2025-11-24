@@ -167,6 +167,12 @@ layout: compress
   <div class="wrapper">
     <h2>Photo Gallery</h2>
 
+    {% if content != "" %}
+    <div class="page__content" style="max-width: 800px; margin: 0 auto 2.5rem; text-align: center; line-height: 1.6;">
+      {{ content }}
+    </div>
+    {% endif %}
+
     <div class="work-grid">
 
       {% comment %}

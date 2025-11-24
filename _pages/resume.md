@@ -23,7 +23,7 @@ Education
 
 Work experience
 ======
-* Lmao
+* Everything that I have done was in high school, so I don't believe they apply now. But your company can be the first one here. :smiley:
 
 Extracurriculars
 ======
@@ -37,7 +37,7 @@ Extracurriculars
   * 2024-25 First Team All-Conference (SLC) honors as a Long-Stick Midfielder for U.C. Irvine
   * Competing in the Men’s Collegiate Lacrosse Association’s Southwestern Lacrosse Conference (SLC)
 
-* Video games and stuff
+* Video Games and Stuff
   * Hit Celestial in Marvel Rivals (top 1.5%) 3 seasons in a row 
   * 10,000 trophies in Clash Royale
 
