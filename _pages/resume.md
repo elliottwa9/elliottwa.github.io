@@ -23,7 +23,7 @@ Education
 
 Work experience
 ======
-* Everything that I have done was in high school, so I don't believe they apply now. But your company can be the first one here. :smiley:
+* Even though I have work experience on my resume, everything I have done was in high school, so I don't want to put them here. Although, your company can be the first one here. :smiley:
 
 Extracurriculars
 ======
