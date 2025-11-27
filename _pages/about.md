@@ -9,7 +9,7 @@ redirect_from:
 
 Hello, I'm Elliott, a Business Economics student at UC Irvine. <br>
 <br>
-Please excuse the lack of anything on here. I still have very limited coding experience, and am using this to tinker and display some of my work. <br>
+Please excuse the lack of anything on here. I'm still learning and am using this to tinker and display some of my work. <br>
 <br>
 Hopefully in the future there will be more substance as I get better. <br>
 <br>
