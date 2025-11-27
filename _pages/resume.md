@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Resume"
+title: ""
 permalink: /resume/
 author_profile: true
 redirect_from:
@@ -34,7 +34,7 @@ Extracurriculars
   * Currently participating in the Development Program, acquiring fundamental skills in financial statement analysis, corporate valuation, equity research, and financial modeling in interactive workshops. 
 
 * UC Irvine Lacrosse Club 
-  * 2024-25 _First Team All-Conference_ (SLC) honors as a Long-Stick Midfielder for UC Irvine
+  * 2024-25 [_First Team All-Conference_](https://mcla.us/articles/slc-division-iii-all-conference) (SLC) honors as a Long-Stick Midfielder for UC Irvine
   * Competing in the Men’s Collegiate Lacrosse Association’s Southwestern Lacrosse Conference (SLC)
 
 * Video Games and Stuff
@@ -47,4 +47,4 @@ Skills
 
 Interests
 ======
-* Lacrosse, Fantasy Football, Basketball, Movies, B&W Photography, Traveling
+* Lacrosse, Fantasy Football, Basketball, Movies, (B&W) Photography, Traveling
