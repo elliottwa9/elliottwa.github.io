@@ -18,7 +18,8 @@ redirect_from:
 
 Education
 ======
-* University of California-Irvine (2024-2028)
+* University of California,Irvine (2024-2028) <br>
+Bachelors of Science, Business Economics
 * International School, Bellevue (2017-2024) 
 
 Work experience
