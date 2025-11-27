@@ -19,7 +19,7 @@ redirect_from:
 Education
 ======
 * University of California, Irvine, 2024-2028
-* International School, Bellevue, 2020-2024 
+* International School, Bellevue, 2017-2024 
 
 Work experience
 ======
