@@ -13,5 +13,8 @@ Please excuse the lack of anything on here. I'm still learning and am using this
 <br>
 Hopefully in the future there will be more substance as I get better. <br>
 <br>
-In the meantime, there are 3 other tabs that (kinda) work, so please feel free to visit those while you're here.
+In the meantime, there are 3 other tabs that (kinda) work, so please feel free to visit those while you're here. <br>
+<br>
+You can also connect with me on 
+[LinkedIn](https://www.linkedin.com/in/elliottwa9/){:target="_blank" rel="noopener noreferrer"}.
 
