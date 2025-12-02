@@ -1,7 +1,7 @@
 locale                   : "en-US"
 site_theme               : "default" # Currently available options are "default", "air"
 title                    : ""
-title_separator          : "-"
+title_separator          : ""
 name                     : &name "Elliott"
 description              : &description "Elliott's Site"   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://ewang15.me 
