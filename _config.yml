@@ -3,7 +3,7 @@ title: Elliott Wang
 subtitle:
 email: elliottwa9@gmail.com
 description: This is my website.
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: # the subpath of your site, e.g. /blog
 url: # the base hostname & protocol for your site
 author:
 street_address: 
@@ -22,11 +22,11 @@ tiles-count: 6
 # Icons are not shown if value is empty
 # You need to restart jekyll for changes to have an effect
 socials:
+  LinkedIn: https://www.linkedin.com/in/elliottwa9/
   GitHub: https://github.com/elliottwa9
   GitLab:
   Google-Plus:
   Instagram:
-  LinkedIn: https://www.linkedin.com/in/elliottwa9/
   Twitter: 
   Facebook:
   Slack:
