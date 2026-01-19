@@ -4,7 +4,7 @@ subtitle: by HTML5 UP
 email: elliottwa9@gmail.com
 description: A responsive site template designed by HTML5 Up<br /> and released under the Creative Commons.
 baseurl: "/forty-jekyll-theme" # the subpath of your site, e.g. /blog
-url: http://ewang15.me/
+url: # the base hostname & protocol for your site
 author:
 street_address: 
 city: Bellevue
