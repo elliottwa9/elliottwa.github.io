@@ -1,7 +1,7 @@
 ---
-title: Landing
+title: Photos
 layout: landing
-description: 'Lorem ipsum dolor sit amet nullam consequa<br />sed veroeros. tempus adipiscing nulla.'
+description: 'Some photos that I took that I like.<br /> Shot with a Fujifilm X100V.'
 image: assets/images/pic07.jpg
 nav-menu: true
 ---
