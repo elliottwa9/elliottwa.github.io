@@ -5,6 +5,7 @@ description: 'Some photos I took'
 image:
 nav-menu: true
 gallery: true
+permalink: /photos
 ---
 
 <div id="main" class="alt">

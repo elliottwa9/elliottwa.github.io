@@ -3,6 +3,7 @@ layout: page
 title: Resumé
 image: 
 nav-menu: true
+permalink: /resume
 ---
 
 <style>

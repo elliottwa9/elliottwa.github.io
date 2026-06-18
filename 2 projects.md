@@ -5,4 +5,5 @@ description:
 category: project
 image:
 nav-menu: true
+permalink: /projects
 ---
