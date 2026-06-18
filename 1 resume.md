@@ -21,7 +21,7 @@ details > summary::before {
   transition: transform 0.3s ease;
   font-size: 0.85em;
 }
-details[open] > summary::before {
+details.is-open > summary::before {
   transform: rotate(90deg);
 }
 .resume-entry {
@@ -86,7 +86,7 @@ details[open] > summary::before {
 				<summary><strong>Activities and Leadership</strong></summary>
 				<div class="resume-entry">
 					<h3>McKinsey and Company</h3>
-					<p><em>Forward Program Participant · Apr 2026 – Jun 2026 · Remote</em></p>
+					<p><em>Forward Program Participant · Apr 2026 – Jun 2026 </em></p>
 					<ul>
 						<li>Selected for a competitive, multi-stage leadership program at McKinsey, building executive communication, structured thinking, and professional presence through curated workshops and coaching.</li>
 						<li>Applied MECE-based issue trees and hypothesis-driven frameworks to break down ambiguous business problems, producing structured analyses across strategy and operations cases.</li>
@@ -94,7 +94,7 @@ details[open] > summary::before {
 				</div>
 				<div class="resume-entry">
 					<h3>UC Investments Academy</h3>
-					<p><em>Member · Aug 2025 – Present · Remote</em></p>
+					<p><em>Member · Aug 2025 – Present </em></p>
 					<ul>
 						<li>Built practical exposure to institutional investment management, financial statement analysis, portfolio construction, and sustainable investing through hands-on case studies and guest lectures.</li>
 						<li>Developed technical skills in valuation, Excel financial modeling, and scenario analysis through Training the Street workshops and The Forage virtual job simulations.</li>
@@ -112,8 +112,8 @@ details[open] > summary::before {
 					<p><em>Vice President &amp; Player · Sep 2024 – Present · Irvine, CA</em></p>
 					<ul>
 						<li>Directed financial planning and day-to-day operations as second-in-command, managing member dues, tracking expenses, and leading fundraising initiatives to keep the club financially self-sufficient.</li>
-						<li>Manage the club's Instagram presence and produced game-day photography and videography, growing engagement and visibility to support player recruiting and sponsorship outreach efforts.</li>
-						<li>Earned 24-25 and 25-26 <em>SLC First Team All-Conference</em> honors as a Long-Stick Midfielder.</li>
+						<li>Managing the club's <a href="https://www.instagram.com/ucimenslacrosse/" target="_blank" rel="noopener noreferrer"> Instagram</a> presence and produced game-day photography and videography, growing engagement and visibility to support player recruiting and sponsorship outreach efforts.</li>
+						<li><a href="https://mcla.us/articles/slc-division-iii-all-conference" target="_blank" rel="noopener noreferrer">2024-25</a> and <a href="https://mcla.us/articles/slc-shares-division-iii-all-conferences-awards" target="_blank" rel="noopener noreferrer">2025-26</a> <em>SLC First Team All-Conference</em> honors as a Long-Stick Midfielder.</li>
 					</ul>
 				</div>
 			</details>
@@ -123,7 +123,7 @@ details[open] > summary::before {
 				<div class="resume-entry">
 					<ul>
 						<li><strong>Technical:</strong> Proficient in Excel, Google Sheets, PowerPoint. Working knowledge of Stata, Python</li>
-						<li><strong>Certificates:</strong> Training the Street: Introduction to Financial Modeling; Financial Statement Analysis</li>
+						<li><strong>Certificates:</strong> Training the Street: <a href="https://app.diplomasafe.com/en-US/certificates/d04af07d5c46f5594469b404521449884040a1237" target="_blank" rel="noopener noreferrer">Introduction to Financial Modeling</a>; <a href="https://app.diplomasafe.com/en-US/certificates/d2bd31e0157d93aefd78d933c39d3614ac15bc181" target="_blank" rel="noopener noreferrer">Financial Statement Analysis</a></li>
 						<li><strong>Languages:</strong> English (Native), Mandarin (Elementary Proficiency)</li>
 						<li><strong>Interests:</strong> Lacrosse, Fantasy Football, Basketball, Movies, B&amp;W Photography</li>
 					</ul>
@@ -141,6 +141,7 @@ const allDetails = Array.from(document.querySelectorAll('details'));
 
 function closeDetails(d) {
   const w = d._wrapper;
+  d.classList.remove('is-open');
   w.style.height = w.scrollHeight + 'px';
   requestAnimationFrame(() => {
     w.style.transition = 'height 0.35s ease';
@@ -172,6 +173,7 @@ allDetails.forEach(details => {
     } else {
       allDetails.forEach(other => { if (other.open) closeDetails(other); });
       details.setAttribute('open', '');
+      details.classList.add('is-open');
       const fullHeight = wrapper.scrollHeight + 'px';
       wrapper.style.height = '0';
       requestAnimationFrame(() => {
