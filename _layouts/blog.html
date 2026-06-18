@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+{% include head.html %}
+
+<body>
+
+    {% include header.html %}
+
+    <!-- Main -->
+    <div id="main" class="alt">
+
+        <section id="one">
+            <div class="inner">
+                <header class="major">
+                    <h1>{{ page.title }}</h1>
+                    {% if page.description %}<p>{{ page.description }}</p>{% endif %}
+                </header>
+
+                {% if page.category %}
+                    {% assign posts_to_show = site.posts | where_exp: "post", "post.categories contains page.category" %}
+                {% else %}
+                    {% assign posts_to_show = site.posts %}
+                {% endif %}
+
+                {% for post in posts_to_show %}
+                    {% if post.title != "404" %}
+                    <article class="box">
+                        <header class="major">
+                            <h3 style="margin-bottom: 0.25em;"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                            {% if post.date %}
+                                <p style="margin-top: 0; font-size: 0.9em; opacity: 0.85;"><em>{{ post.date | date: "%B %d, %Y" }}</em></p>
+                            {% endif %}
+                        </header>
+                        {% if post.description %}
+                            <p>{{ post.description }}</p>
+                        {% elsif post.excerpt %}
+                            <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
+                        {% endif %}
+                        <ul class="actions">
+                            <li><a href="{{ post.url | relative_url }}" class="button">Read more</a></li>
+                        </ul>
+                    </article>
+                    {% endif %}
+                {% endfor %}
+
+                {% if posts_to_show.size == 0 %}
+                    <p>No posts yet.</p>
+                {% endif %}
+            </div>
+        </section>
+
+    </div>
+
+    {% include footer.html %}
+
+</body>
+
+</html>

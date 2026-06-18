@@ -66,6 +66,7 @@
 	@import 'components/table';
 	@import 'components/button';
 	@import 'components/tiles';
+	@import 'components/gallery';
 	@import 'components/contact-method';
 	@import 'components/spotlights';
 
@@ -78,3 +79,63 @@
 	@import 'layout/footer';
 	@import 'layout/wrapper';
 	@import 'layout/menu';
+
+// Custom overrides
+	#header {
+		text-transform: none;
+		letter-spacing: 0;
+		padding-left: 2.5em;
+		padding-right: 2.5em;
+		height: 5em;
+		line-height: 5em;
+
+		.logo {
+			font-size: 1.1em;
+		}
+
+		nav a {
+			font-size: 1em;
+		}
+
+		.logo strong {
+			background-color: transparent !important;
+			color: #fff;
+			display: inline;
+			line-height: inherit;
+			padding: 0;
+			margin-right: 0;
+			transition: none;
+		}
+
+		.logo:hover strong {
+			background-color: transparent !important;
+		}
+
+		nav a.icon.alt {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0;
+
+			&::before {
+				margin: 0;
+			}
+		}
+	}
+
+	#footer {
+		.inner {
+			padding-top: 1.5em;
+			padding-bottom: 1.5em;
+		}
+	}
+
+	#wrapper {
+		padding-left: 2.5em;
+		padding-right: 2.5em;
+
+		@include breakpoint(small) {
+			padding-left: 1em;
+			padding-right: 1em;
+		}
+	}

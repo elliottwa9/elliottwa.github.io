@@ -15,7 +15,27 @@
         <section id="banner" class="style2">
             <div class="inner">
                 <span class="image">
-                    <img src="{{ site.baseurl }}/{{ page.image }}" alt="">
+                    {% assign banner_path = '' %}
+                    {% if page.image and page.image != '' %}
+                        {% assign banner_path = page.image | split: "\\" | join: "/" %}
+                    {% else %}
+                        {% assign _sorted = site.static_files | sort: "path" %}
+                        {% for f in _sorted %}
+                            {% assign _p = f.path | split: "\\" | join: "/" | downcase %}
+                            {% assign _ext = f.extname | downcase %}
+                            {% if _p contains 'assets/photos/' %}
+                                {% if _ext == '.jpg' or _ext == '.jpeg' or _ext == '.png' or _ext == '.gif' or _ext == '.webp' %}
+                                    {% if banner_path == '' %}
+                                        {% assign banner_path = f.path | split: "\\" | join: "/" %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    {% if banner_path != '' %}
+                        {% assign banner_src = banner_path | prepend: '/' | relative_url %}
+                        <img src="{{ banner_src }}" alt="">
+                    {% endif %}
                 </span>
                 <header class="major">
 

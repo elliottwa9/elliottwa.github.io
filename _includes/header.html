@@ -3,28 +3,26 @@
 
 <!-- Header -->
 <header id="header"{% if page.layout == "landing" %} class="alt style2"{% endif %}{% if page.layout == "home" %} class="alt"{% endif %}>
-	<a href="{{ "" | absolute_url }}/" class="logo"><strong>{{ site.title }}</strong> <span>{{ site.subtitle }}</span></a>
-	<nav>
-		<a href="#menu">Menu</a>
+	<a href="{{ "" | absolute_url }}" class="logo"><strong>{{ site.title }}</strong> <span>{{ site.subtitle }}</span></a>
+	<nav style="margin-left: auto;">
+		<ul style="list-style: none; display: flex; gap: 0.75em; align-items: center; margin: 0; padding: 0; font-size: 0.8em;">
+			{% for page in site.pages %}
+				{% if page.layout == "home" %}
+					<li><a href="{{ "" | absolute_url }}/">{{ page.title }}</a></li>
+				{% endif %}
+			{% endfor %}
+			{% for page in site.html_pages %}
+				{% if page.layout != "home" and page.nav-menu == true %}
+					<li><a href="{{ page.url | absolute_url }}">{{ page.title }}</a></li>
+				{% endif %}
+			{% endfor %}
+			<li><a href="mailto:{{ site.email }}" class="icon alt fa-envelope" aria-label="Email" style="display: inline-flex; align-items: center; justify-content: center;"><span class="label">Email</span></a></li>
+			<li><a href="{{ site.socials.LinkedIn }}" class="icon alt fa-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center;"><span class="label">LinkedIn</span></a></li>
+		</ul>
 	</nav>
 </header>
 
-<!-- Menu -->
-<nav id="menu">
-	<ul class="links">
-        {% for page in site.pages %}
-		    {% if page.layout == "home" %}
-		        <li><a href="{{ "" | absolute_url }}/">{{ page.title }}</a></li>
-	    	{% endif %}
-		{% endfor %}
-		{% for page in site.html_pages %}
-		    {% if page.layout != "home" and page.nav-menu == true %}
-		        <li><a href="{{ page.url | absolute_url }}">{{ page.title }}</a></li>
-		    {% endif %}
-		{% endfor %}
-	</ul>
-	<ul class="actions vertical">
-		<li><a href="#" class="button special fit">Get Started</a></li>
-		<li><a href="#" class="button fit">Log In</a></li>
-	</ul>
+<!-- Menu (kept for JS compatibility, hidden) -->
+<nav id="menu" style="display: none;">
+	<ul class="links"></ul>
 </nav>
