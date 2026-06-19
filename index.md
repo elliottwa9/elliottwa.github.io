@@ -2,7 +2,7 @@
 layout: home
 title: Home
 landing-title: "Hello, my name is Elliott"
-description: "Current Business Economics Student at U.C. Irvine"
+description: "Business Economics Student at U.C. Irvine"
 image: null
 author: null
 show_tile: false

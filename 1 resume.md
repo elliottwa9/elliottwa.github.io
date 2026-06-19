@@ -48,6 +48,8 @@ details.is-open > summary::before {
 				<h1>Resumé</h1>
 			</header>
 
+			<a href="/assets/Elliott_Wang_Resume.pdf" target="_blank" class="button">View Resumé</a>
+
 			<hr class="major" />
 
 			<details>
