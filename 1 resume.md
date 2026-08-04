@@ -56,7 +56,7 @@ details.is-open > summary::before {
 				<summary><strong>Education</strong></summary>
 				<div class="resume-entry">
 					<h3>University of California, Irvine – School of Social Sciences</h3>
-					<p><em>B.S., Business Economics · Expected Graduation: June 2027</em></p>
+					<p><em>B.S., Business Economics · Expected Graduation: December 2027</em></p>
 					<ul>
 						<li><strong>Cumulative GPA:</strong> 3.7/4.0</li>
 						<li><strong>Achievements:</strong> Dean's Honor List (Winter '25 – Present)</li>
@@ -67,6 +67,14 @@ details.is-open > summary::before {
 
 			<details>
 				<summary><strong>Work Experience and Projects</strong></summary>
+				<div class="resume-entry">
+					<h3>Student Managed Investment Fund (SMIF) UCI</h3>
+					<p><em>Summer Analyst - Macro · Jul 2026 – Sep 2026 · Irvine, CA</em></p>
+					<ul>
+						<li>Conduct top-down macroeconomic research using Bloomberg Terminal, Capital IQ, and PitchBook to generate trade ideas for a $50,000 student-managed portfolio spanning equities, fixed income, and alternatives.</li>
+						<li>Develop macro theses and defend investment recommendations in investment committee style presentations.</li>
+					</ul>
+				</div>
 				<div class="resume-entry">
 					<h3>Highland Dental Care</h3>
 					<p><em>Dental Assistant · Jun 2024 – Sep 2024 · Bellevue, WA</em></p>
@@ -125,7 +133,7 @@ details.is-open > summary::before {
 				<summary><strong>Additional Information</strong></summary>
 				<div class="resume-entry">
 					<ul>
-						<li><strong>Technical:</strong> Proficient in Excel, Google Sheets, PowerPoint. Working knowledge of Stata, Python</li>
+						<li><strong>Technical:</strong> Financial modeling (three-statement, DCF, comps); Excel (INDEX/MATCH, pivot tables, sensitivity analysis), Google Sheets, PowerPoint; Bloomberg Terminal, Capital IQ, PitchBook; Stata; Python (pandas)</li>
 						<li><strong>Certificates:</strong> Training the Street: <a href="https://app.diplomasafe.com/en-US/certificates/d04af07d5c46f5594469b404521449884040a1237" target="_blank" rel="noopener noreferrer">Introduction to Financial Modeling</a>; <a href="https://app.diplomasafe.com/en-US/certificates/d2bd31e0157d93aefd78d933c39d3614ac15bc181" target="_blank" rel="noopener noreferrer">Financial Statement Analysis</a></li>
 						<li><strong>Languages:</strong> English (Native), Mandarin (Elementary Proficiency)</li>
 						<li><strong>Interests:</strong> Lacrosse, Fantasy Football, Basketball, Movies, B&amp;W Photography</li>
