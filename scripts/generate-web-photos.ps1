@@ -8,6 +8,12 @@
   than -MaxLongEdge and re-encoding at -Quality. Skips files that already
   have an up-to-date web copy unless -Force is passed.
 
+  The gallery page links each photo's full-size view by taking the web
+  copy's path and swapping "photos-web" for "photos", so the source file
+  must have the exact same relative path (case included) as its web copy.
+  Any source file not already named with a lowercase .jpg extension is
+  renamed in place to match before its web copy is generated.
+
 .PARAMETER Force
   Regenerate every web copy, even if one already exists and is newer than
   the source file.
@@ -54,6 +60,24 @@ $skipped = 0
 foreach ($src in $sourceFiles) {
   $relPath = $src.FullName.Substring($srcRoot.Length).TrimStart('\')
   $relJpg = [System.IO.Path]::ChangeExtension($relPath, ".jpg")
+
+  if ($relPath -cne $relJpg) {
+    $normalizedFullPath = Join-Path $srcRoot $relJpg
+    $newLeafName = Split-Path -Leaf $normalizedFullPath
+    if ($relPath.ToLower() -eq $relJpg.ToLower()) {
+      # Case-only change (e.g. .JPG -> .jpg) — NTFS needs a two-step hop
+      # via a temp name to actually apply new casing.
+      $tempName = $src.Name + ".tmp_rename"
+      Rename-Item -Path $src.FullName -NewName $tempName -Force
+      Rename-Item -Path (Join-Path $src.DirectoryName $tempName) -NewName $newLeafName -Force
+    } else {
+      Rename-Item -Path $src.FullName -NewName $newLeafName -Force
+    }
+    $src = Get-Item $normalizedFullPath
+    $relPath = $relJpg
+    Write-Output "Renamed source to match web-copy convention: $relJpg"
+  }
+
   $destPath = Join-Path $destRoot $relJpg
 
   if (-not $Force -and (Test-Path $destPath) -and (Get-Item $destPath).LastWriteTime -ge $src.LastWriteTime) {
