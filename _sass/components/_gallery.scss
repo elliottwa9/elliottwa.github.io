@@ -155,6 +155,7 @@
 		background: rgba(0, 0, 0, 0.92);
 		bottom: 0;
 		left: 0;
+		opacity: 0;
 		padding: 2rem 1rem 4rem;
 		position: fixed;
 		right: 0;
@@ -162,6 +163,11 @@
 		z-index: 100001;
 		@include vendor('flex-direction', 'column');
 		@include vendor('display', 'flex');
+		@include vendor('transition', 'opacity 0.25s ease');
+
+		&.is-open {
+			opacity: 1;
+		}
 
 		&[hidden] {
 			display: none !important;
